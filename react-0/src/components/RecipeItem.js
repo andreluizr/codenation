@@ -4,8 +4,8 @@ const RecipeItem = (props) => {
 
 let texto = props.titulo.split('');
 
-const tituloMark = texto.map(text => {if (text.toLowerCase() === props.searchString.toLowerCase()) { return <mark> +text </mark>} return text}) ;
-console.log(tituloMark);
+const tituloMark = texto.map(text => {if (text.toLowerCase() === props.searchString.toLowerCase()) { return <mark> +text </mark>;} return text}) ;
+//console.log(tituloMark);
 //((tituloMark,[chave,valor]) => (tituloMark = valor === props.searchString ? <mark> +Valor +</mark> : valor))}
 
 //console.log(titulo);
