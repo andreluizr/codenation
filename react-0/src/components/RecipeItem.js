@@ -16,7 +16,7 @@ console.log('SEARCH STRING: ',props.searchString);
         />
 
         <div className="card-body">
-          <h5 className="card-title"> {texto} </h5>
+          <h5 className="card-title"> {texto.map = (text,index) => (text === props.searchString ? <mark> +text +</mark> : text )}</h5>
           <p className="card-text">
             <strong>Ingredients: </strong><div dangerouslySetInnerHTML={{ __html: props.ingrediente }} />
           </p>
