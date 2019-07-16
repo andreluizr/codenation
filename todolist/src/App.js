@@ -20,8 +20,7 @@ class App extends React.Component {
     e.preventDefault();
     const {tasks}  = this.state;
     const value = e.target.querySelector('input').value;
-    console.log('value',value);
-    console.log("CHAMADA ADDTASK")
+    
   }
   render() {
     return (
