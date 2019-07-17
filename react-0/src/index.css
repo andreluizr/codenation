@@ -27,3 +27,7 @@ mark {
 .Navbar-logo {
   height: 3rem;
 }
+
+.p.capitalize {
+  text-transform: capitalize;
+}
