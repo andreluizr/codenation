@@ -7,7 +7,7 @@ const Home = ({
     searchString = ''
 }) => (
     <div className="row">
-        <RecipeItem />
+        <RecipeItem recipes= {this.recipes} />
         <RecipeItem />
         <RecipeItem />
         <RecipeItem />
