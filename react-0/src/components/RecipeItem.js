@@ -1,28 +1,36 @@
 import React from "react";
 
 const RecipeItem = props => {
-  const tituloMark = props.titulo;
-
-  const ingredienteMark = props.ingrediente
-    .split()
-    .map(ingrediente =>
-      ingrediente.toLowerCase().includes(props.searchString.toLowerCase()) ? (
-        <mark>{ingrediente}</mark>
-      ) : (
-        { ingrediente }
-      )
+  const tituloMark = props.titulo.split(",").map(titulo => {
+    return titulo
+      .toLowerCase()
+      .includes(
+        props.searchString.toLowerCase() || props.searchString.length === 0
+      ) ? (
+      <mark>{titulo}</mark>
+    ) : (
+      titulo
     );
+  });
 
-  //props.ingrediente.split(this).map(ingrediente => (<mark>{ingrediente}</mark>));
-
-  console.log({ ingredienteMark });
+  const ingredienteMark = props.ingrediente.split(",").map(ingrediente => {
+    return ingrediente
+      .toLowerCase()
+      .includes(
+        props.searchString.toLowerCase() || props.searchString.length === 0
+      ) ? (
+      <mark>{ingrediente}</mark>
+    ) : (
+      ingrediente
+    );
+  });
 
   return (
     <div className="col-sm-3 mt-4">
       <div className="card">
         <img
           className="card-img-top img-fluid"
-          src={props.imagem} //"https://via.placeholder.com/350x300"
+          src={props.imagem} 
           alt=""
         />
 
