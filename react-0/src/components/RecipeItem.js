@@ -1,6 +1,7 @@
 import React from "react";
 
 const RecipeItem = props => {
+  
   const tituloMark = props.titulo.split(",").map(titulo => {
     return titulo
       .toLowerCase()
@@ -13,7 +14,7 @@ const RecipeItem = props => {
     );
   });
 
-  const ingredienteMark = props.ingrediente.split(",").map(ingrediente => {
+  const ingredienteMark = props.ingrediente.split(",").map((ingrediente,key) => {
     return ingrediente
       .toLowerCase()
       .includes(
