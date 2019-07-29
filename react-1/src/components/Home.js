@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import RecipeItem from "./RecipeItem";
+import { withRouter } from 'react-router-dom';
+
 
 const receitasFiltradas = (pRecipes,pSearchString) => {
   return pRecipes.filter(
@@ -12,29 +14,36 @@ const receitasFiltradas = (pRecipes,pSearchString) => {
   );
 };
 
-const Home = ({ recipes = [], searchString = "" }) => (
+const Home = ({ recipes = [], searchString = "" }) => {
+  
+  
+
+
+  return (
   <div className="row">
-     <strong>HOME </strong>
+    
     {
       receitasFiltradas(recipes,searchString).map((receita, index) => (
      
         <RecipeItem
-        key={index}
-        title={receita.title}
-        ingredients={receita.ingredients}
-        thumbnail={receita.thumbnail}
-        searchString={searchString}
+          key={index}
+          title={receita.title}
+          ingredients={receita.ingredients}
+          thumbnail={receita.thumbnail}
+          searchString={searchString}
+         
       />
+      
     ))
     
-    
+
     }
   </div>
-);
+)};
 
 Home.propTypes = {
   searchString: PropTypes.string,
   recipes: PropTypes.array
 };
 
-export default Home;
+export default withRouter(Home);

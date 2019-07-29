@@ -8,6 +8,8 @@ import User from './User'
 import { slugify } from '../helpers'
 import recipes from '../sample_data/recipes.json'
 
+const receitas = recipes.result;
+
 const HomeRoute = ({ match }) => (
   <Home
     recipes={[]}
